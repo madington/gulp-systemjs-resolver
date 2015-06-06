@@ -21,6 +21,7 @@ module.exports = function(options) {
 	}
 
 	eval(fs.readFileSync(options.systemConfig, 'utf8'));
+	System.baseURL = options.baseURL;
 
 	return through.obj(function(file, enc, cb) {
 		var replacements = [],
